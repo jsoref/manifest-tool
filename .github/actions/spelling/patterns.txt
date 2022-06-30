@@ -1,0 +1,17 @@
+# See https://github.com/check-spelling/check-spelling/wiki/Configuration-Examples:-patterns
+
+# sha
+\b[0-9a-f]{40,}\b
+
+# set arguments
+\bset\s+-[abefimouxE]+\b
+
+# version suffix <word>v#
+[Vv]\d+(?:\b|(?=[a-zA-Z_]))
+
+# acceptable duplicates
+\s(long|LONG) \g{-1}\s
+\@param\s+(\w+)\s+\g{-1}\s
+
+# ignore long runs of a single character:
+\b([A-Za-z])\g{-1}{3,}\b
